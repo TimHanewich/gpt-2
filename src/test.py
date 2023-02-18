@@ -14,13 +14,12 @@ models_dir = r"C:\Users\Tim\Downloads\gpt-2\models"
 temperature = 0.7
 top_k = 40
 top_p = 1
+length = 80 # output length, in tokens
 
 enc = encoder.get_encoder(model_name, models_dir)
 hparams = model.default_hparams()
 with open(os.path.join(models_dir, model_name, 'hparams.json')) as f:
     hparams.override_from_dict(json.load(f))
-
-length = hparams.n_ctx // 2
 
 with tf.Session(graph=tf.Graph()) as sess:
     context = tf.placeholder(tf.int32, [1, None])
