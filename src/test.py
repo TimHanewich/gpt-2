@@ -6,7 +6,7 @@ import tensorflow as tf
 
 import model, sample, encoder
 
-model_name = "117M"
+model_name = "345M"
 models_dir = r"C:\Users\Tim\Downloads\gpt-2\models"
 
 enc = encoder.get_encoder(model_name, models_dir)
@@ -35,7 +35,7 @@ with tf.Session(graph=tf.Graph()) as sess:
 
 
 
-    PROMPT = "My favorite operating system is "
+    PROMPT = "The importance of wearing a seatbelt cannot be understaded. Wearing a seatbelt keeps you safe while also protecting others. Please wear a seat belt!\n\nWearing a seatbelt is important because "
     context_tokens = enc.encode(PROMPT)
     
     out = sess.run(output, feed_dict={context: [context_tokens]})[:, len(context_tokens):]
