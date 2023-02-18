@@ -33,9 +33,12 @@ with tf.Session(graph=tf.Graph()) as sess:
 
 
 
+    PROMPT = "A woman wakes up in a conference room with no memory of who or where she is. After being given a survey and learning she is Helly, a new hire at Lumon Industries, she is allowed to leave but finds she is unable to do so. She then sees a video explaining that she has undergone the severance procedure, which split her memories to create a version of herself that will only exist inside the workplace. Mark Scout, who works alongside Helly in Lumon's Macrodata Refinement (MDR) division, discovers he is being promoted to department head in light of coworker Petey's sudden departure. The outside version of Mark, a former history professor grieving his wife's death and living in the Lumon-subsidized town of Kier, encounters a man claiming to be Petey who gives him a letter with cryptic instructions. Mark returns home and interacts with his neighbor Mrs. Selvig, unaware that she is his boss, senior manager Harmony Cobel. Helly subjected herself to the severance procedure because "
+
+    
+    
 
 
-    PROMPT = "The importance of wearing a seatbelt cannot be understaded. Wearing a seatbelt keeps you safe while also protecting others. Please wear a seat belt!\n\nWearing a seatbelt is important because "
     context_tokens = enc.encode(PROMPT)
     
     out = sess.run(output, feed_dict={context: [context_tokens]})[:, len(context_tokens):]
