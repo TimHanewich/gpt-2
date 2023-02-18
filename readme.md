@@ -15,3 +15,7 @@ print(response)
 ```
 
 I also wrote the [stripped.py](./src/stripped.py) to demonstrate using the core model (abstracted from [interactive_conditional_samples.py](./src/interactive_conditional_samples.py)).
+
+
+## Downloading Packages
+You'll have to create a virtual environment with the necessary dependencies to run the code here. See steps 2 and 3 from [here](https://timhanewich.medium.com/running-openais-gpt-2-language-model-on-your-pc-5d5e1b9fbb8b) to see how to do this.
