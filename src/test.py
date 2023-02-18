@@ -23,8 +23,6 @@ with open(os.path.join(models_dir, model_name, 'hparams.json')) as f:
 
 with tf.Session(graph=tf.Graph()) as sess:
     context = tf.placeholder(tf.int32, [1, None])
-    np.random.seed(None)
-    tf.set_random_seed(None)
     output = sample.sample_sequence(hparams=hparams, length=length, context=context, batch_size=1, temperature=temperature, top_k=top_k, top_p=top_p)
 
     saver = tf.train.Saver()
