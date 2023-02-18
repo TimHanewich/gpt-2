@@ -6,8 +6,14 @@ import tensorflow as tf
 
 import model, sample, encoder
 
+# Model location and selection
 model_name = "345M"
 models_dir = r"C:\Users\Tim\Downloads\gpt-2\models"
+
+# parameters
+temperature = 0.7
+top_k = 40
+top_p = 1
 
 enc = encoder.get_encoder(model_name, models_dir)
 hparams = model.default_hparams()
@@ -24,7 +30,7 @@ with tf.Session(graph=tf.Graph()) as sess:
         hparams=hparams, length=length,
         context=context,
         batch_size=1,
-        temperature=0.7, top_k=40, top_p=1
+        temperature=temperature, top_k=top_k, top_p=top_p
     )
 
     saver = tf.train.Saver()
