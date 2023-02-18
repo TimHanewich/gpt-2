@@ -6,6 +6,18 @@ import tensorflow as tf
 
 import model, sample, encoder
 
+def trim(raw:str) -> str:
+
+    ToReturn:str = raw
+
+    # take only what occurs before the endoftext tag
+    index:int = raw.find("<|endoftext|>")
+    if index > -1:
+        ToReturn = ToReturn[0:index]
+
+    return ToReturn
+
+
 class gpt2:
 
     # parameters
@@ -43,6 +55,6 @@ class gpt2:
         context_tokens = self.__enc__.encode(prompt)
         out = self.__sess__.run(self.__output__, feed_dict={self.__context__: [context_tokens]})[:, len(context_tokens):]
         text = self.__enc__.decode(out[0])
-        return text
+        return trim(text)
 
 
