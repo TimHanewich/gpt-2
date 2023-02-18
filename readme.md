@@ -13,3 +13,5 @@ response = gen.prompt("A woman wakes up in a conference room with no memory of w
 print(response)
 
 ```
+
+I also wrote the [stripped.py](./src/stripped.py) to demonstrate using the core model (abstracted from [interactive_conditional_samples.py](./src/interactive_conditional_samples.py)).
