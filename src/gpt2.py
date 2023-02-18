@@ -15,8 +15,12 @@ def trim(raw:str) -> str:
     if index > -1:
         ToReturn = ToReturn[0:index]
 
-    return ToReturn
+    # take out the last sentence
+    index = raw.rfind(". ")
+    if index > -1:
+        ToReturn = ToReturn[0:index] + "."
 
+    return ToReturn
 
 class gpt2:
 
