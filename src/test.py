@@ -4,7 +4,7 @@ content = f.read()
 import gpt2
 g = gpt2.gpt2()
 g.models_dir = r"C:\Users\Tim\Downloads\gpt-2\models"
-g.model_name = "345M"
+g.model_name = "774M"
 g.load()
 
 response = g.prompt(content)
