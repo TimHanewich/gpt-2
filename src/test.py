@@ -1,15 +1,11 @@
-f = open(r"C:\Users\Tim\Downloads\gpt-2\src\prompt.txt")
-content = f.read()
-
 import gpt2
 g = gpt2.gpt2()
 g.models_dir = r"C:\Users\Tim\Downloads\gpt-2\models"
-g.model_name = "774M"
+g.model_name = "1558M"
+g.length = 200
+g.temperature = 0.8
 g.load()
 
-response = g.prompt(content)
+response = g.prompt("")
 
-print("----------------")
-print(content)
-print("================")
 print(response)
